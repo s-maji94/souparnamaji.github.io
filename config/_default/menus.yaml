@@ -1,0 +1,54 @@
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+  #     desired widget in your `content/home/` folder.
+  #   The weight parameter defines the order that the links will appear in.
+
+main:
+  - name: Bio
+    url: /
+    weight: 10
+  - name: Experience
+    url: experience/
+    weight: 20
+  - name: Research
+    url: research/
+    weight: 30
+  - name: Teaching
+    url: teaching/
+    weight: 40
+  - name: Talks
+    url: talks/
+    weight: 50
+  - name: Publications
+    url: publications/
+    weight: 60
+  - name: Awards & Grants
+    url: awards-and-grants/
+    weight: 70
+  - name: Service
+    url: service/
+    weight: 80
+  - name: CV
+    url: cv/
+    weight: 90
+  #- name: Hobbies
+  #  url: hobbies/
+  #  weight: 100
+  #- name: Media
+  #  url: media/
+  #  weight: 110
+
+sidebar:
+  - identifier: more
+    name: Still need help?
+    params:
+      type: separator
+    weight: 1
+  - identifier: community
+    name: "Community"
+    pageRef: "/community"
+    weight: 2
+  - identifier: hugoDocs
+    name: "Hugo Docs ↗"
+    url: "https://docs.hugoblox.com"
+    weight: 3

@@ -1,0 +1,24 @@
+<div class="mx-auto flex max-w-screen-xl">
+    {{ partial "components/bio_sidebar.html" (dict "context" . "no_sidebar" false) }}
+    <article class="flex w-full min-w-0 min-h-[calc(100vh-var(--navbar-height))] justify-center break-words pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+        {{ if .Params.HeroImg }}
+        <div class="single_hero_background" style="background-image:url( {{ .Site.BaseURL }}{{.Params.HeroImg}} )">
+            <div class="hero_background_gradient"></div>
+            <div class="hero_background_blur"></div>
+        </div>
+        {{ end }}
+        <main class="prose prose-slate lg:prose-xl dark:prose-invert w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+
+            <div class="content text-base">
+                <h1>{{ .Title }}</h1>
+                {{/* Load Hugo Blox */}}
+                {{ range $index, $block := .Params.sections }}
+                {{/* Do not show sections intended only for the demo site. */}}
+                {{ if or (not $block.demo) ($block.demo | and (eq (os.Getenv "HUGO_BLOX_DEMO") "true")) }}
+                {{ partial "functions/parse_block_v3" (dict "page" $ "block" $block) }}
+                {{ end }}
+                {{ end }}
+            </div>
+        </main>
+    </article>
+</div>

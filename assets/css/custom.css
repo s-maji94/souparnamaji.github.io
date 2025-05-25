@@ -1,0 +1,124 @@
+/* HEADER */
+
+.nav-link {
+    padding: 12px 0px;
+}
+
+/* SIDEBAR */
+.sidebar-icons {
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-icons > li {
+    margin-right: 10px;
+}
+
+/* CONTENT */
+
+html, .prose {
+    font-family: Lato, sans-serif;
+    font-size: 12pt !important;
+}
+
+.wide-content-prose {
+    max-width: 100ch;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300 !important;
+}
+
+h1 {
+    font-size: 18pt !important;
+}
+
+h2 {
+    font-size: 16pt !important;
+}
+
+h3 {
+    font-size: 14pt !important;
+}
+
+.organization-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.organization-grid-cell {
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.organization-grid-cell:first-child {
+    border-right: thin solid #ccc;
+}
+
+.single_hero_background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    width: calc(100% + 40px);
+    z-index: -10;
+    margin-left: -20px;
+    height: 800px;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    border-image: fill 0
+      linear-gradient(#fff9,#ffffff);
+}
+
+.img-thumbnail {
+    float:left;
+    margin: 0 5px 0 0;
+    clear: both;
+}
+
+.prose > h2 {
+    clear: both;
+}
+
+.prose :where(img):not(:where([class~=not-prose],[class~=not-prose] *)) {
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+/* FOOTER */
+
+.page-footer {
+    border-top: 1px solid rgb(189, 193, 196);
+    background-color: rgb(242, 243, 243);
+    margin-top: 40px;
+}
+
+.page-footer > .text-slate-700 {
+    color: #9ba1a6;
+}
+
+.page-footer > .mt-24 {
+    margin-top: 3em;
+}
+
+.page-footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.page-footer a:hover {
+    text-decoration: underline;
+    color: inherit;
+}

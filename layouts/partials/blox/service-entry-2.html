@@ -1,0 +1,44 @@
+{{/* Initialise */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+
+{{ $who_we_are := $block.content.who_we_are | emojify | $page.RenderString }}
+{{ $my_role := $block.content.my_role | emojify | $page.RenderString }}
+
+{{ $timeline_text := $block.content.time }}
+
+<div class="flex flex-col items-center px-6">
+    {{ if $timeline_text }}
+    <div class="w-full bg-gray-200 dark:bg-gray-900 flex flex-wrap items-center justify-center">
+        {{ $timeline_text }}
+    </div>
+    {{ end }}
+
+    <div class="container px-8 mx-auto xl:px-5 py-5 lg:py-8 max-w-screen-lg">
+        <div class="grid gap-3 md:grid-cols-3 lg:gap-3 justify-between">
+            {{ $img := "" }}
+            {{with $block.content.img.filename}}
+            {{- $img = resources.Get (path.Join "media" .) -}}
+            <div class="w-full flex flex-wrap items-center justify-center">
+                <div class="w-full bg-white rounded dark:bg-gray-800">
+                    <div class="overflow-hidden w-full">
+                        <img class="w-full object-cover"
+                             src="{{$img.RelPermalink}}"
+                             alt="" />
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+            {{ with $who_we_are }}
+            <div class="w-full flex flex-wrap items-center">
+            {{.}}
+            </div>
+            {{end}}
+            {{ with $my_role }}
+            <div class="w-full flex flex-wrap items-center">
+            {{.}}
+            </div>
+            {{end}}
+        </div>
+    </div>
+</div>
